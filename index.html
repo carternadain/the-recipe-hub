@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" name="viewport" content="device-width, initial-scale=1.0"/>
   <title>Recipe Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -11,10 +13,10 @@
   <!-- navigation Bar -->
   <div class="container">
     <div class="navbar">
-      <h1 class=logo>Recipe Hub</h1>
-      <nav>
-        <ul>
-          <li><a href="food" target="_blank">food</a></li>
+      <h1 class="logo">Recipe Hub</h1>
+      <nav class="nav">
+        <ul class="nav-ul">
+          <li><a href="food" target="_blank">Food</a></li>
           <li><a href="cocktail">Cocktails</a></li>
           <li><a href="About us" target="_blank">About Us</a></li>
         </ul>
@@ -24,21 +26,23 @@
 <!--Story Area-->
  <div class="row">
   <div class="col">
-      <img src="assets/images/food.jpg" alt="assorted food">
-   <h1>Our Story</h1>
+      <div class="hero-container">
+      <img src="assets/images/food.jpg" alt="assorted food" class="hero">
+        <h1 class="centered">Our Story</h1>
+        </div>
    <p>Hi, welcome to our site we go by the name 
        of recipe hub. Our goal is to help you generator unquie 
        recipes so you dont fall into a rutt like we did when we 
        were college students.
    </p>
-   <button type="button"></a>Explore</button>
+   <button type="button" class="button"></a>Explore</button>
    </div>
     <main>
         <!--Section for getting food & cocktail recipes-->
         <section>
             <!--Random Food Generator-->
             <div>
-                <button type="submit">Generate Food Recipe</button>
+                <button type="submit" class=" button-primary">Generate Food Recipe</button>
                 <div>
                     <h2>Recipe Title</h2>
                     <h3>Recipe Ingredients</h3>
@@ -61,7 +65,7 @@
             </div>
             <!--Random Cocktail Generator-->
             <div>
-                <button type="submit">Generate Cocktail</button>
+                <button type="submit" class=" button-primary">Generate Cocktail</button>
                 <div>
                     <h2>Recipe Title</h2>
                     <img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">
@@ -117,6 +121,7 @@
             </ul>
         </footer>
     </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.navbar {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-ul {
+    text-decoration: none;
+    display: flex;
+    flex-wrap:wrap;
+    list-style: none;
+}
+
+.nav-ul li {
+    padding: 10px;
+}
+
+.nav-ul li a {
+    text-decoration: none;
+}
+
+.hero {
+    width: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+    font-weight: bolder;
+  }
+
+  .hero-container {
+    position: relative;
+    text-align: center;
+    color: black;
+
+  }
