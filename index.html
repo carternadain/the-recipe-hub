@@ -11,7 +11,7 @@
 
 <body>
   <!-- navigation Bar -->
-  <div class="container">
+  <div>
     <div class="navbar">
       <h1 class="logo">Recipe Hub</h1>
       <nav class="nav">
@@ -31,19 +31,20 @@
         <h1 class="centered">Our Story</h1>
         </div>
    <p>Hi, welcome to our site we go by the name 
-       of recipe hub. Our goal is to help you generator unquie 
+       of recipe hub. Our goal is to help you generator unique 
        recipes so you dont fall into a rutt like we did when we 
        were college students.
    </p>
-   <button type="button" class="button"></a>Explore</button>
+   <div id="explore">
+   <button type="button"></a>Explore</button>
+   </div>
    </div>
     <main>
         <!--Section for getting food & cocktail recipes-->
-        <section>
+        <section class="row">
             <!--Random Food Generator-->
-            <div>
+            <div class="four columns">
                 <button type="submit" class=" button-primary">Generate Food Recipe</button>
-                <div>
                     <h2>Recipe Title</h2>
                     <h3>Recipe Ingredients</h3>
                     <ul>
@@ -56,19 +57,18 @@
                     </ul>
                     <h3>Recipe Directions</h3>
                     <p>Insert Directions</p>
-                </div>
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oTw5tPt4KmA" 
+            </div>
+                <div class="four columns">
+                    <iframe src="https://www.youtube.com/embed/oTw5tPt4KmA" 
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
                 </div>
-            </div>
             <!--Random Cocktail Generator-->
-            <div>
+            <div class="four columns">
                 <button type="submit" class=" button-primary">Generate Cocktail</button>
                 <div>
                     <h2>Recipe Title</h2>
-                    <img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">
+                    <!--<img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">-->
                     <h3>Recipe Ingredients</h3>
                     <ul>
                         <li>Ingredient 1, units</li>
