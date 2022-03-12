@@ -4,19 +4,21 @@
 <head>
   <meta charset="UTF-8" name="viewport" content="device-width, initial-scale=1.0"/>
   <title>Recipe Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <!-- navigation Bar -->
-  <div class="container">
+  <div>
     <div class="navbar">
-      <h1 class=logo>Recipe Hub</h1>
-      <nav>
-        <ul>
-          <li><a href="food" target="_blank">food</a></li>
-          <li><a href="cocktail">Cocktails</a></li>
-          <li><a href="About us" target="_blank">About Us</a></li>
+      <h1 class="logo" href="assets/images/logo.png"></h1>
+      <nav class="nav">
+        <ul class="nav-ul">
+          <li><a href="#food" >Food</a></li>
+          <li><a href="#cocktail">Cocktails</a></li>
+          <li><a href="#About-us">About Us</a></li>
         </ul>
       </nav>
  </div>
@@ -24,22 +26,27 @@
 <!--Story Area-->
  <div class="row">
   <div class="col">
-      <img src="assets/images/food.jpg" alt="assorted food">
-   <h1>Our Story</h1>
+      <div class="hero-container">
+      <img src="assets/images/food2.jpg" alt="assorted food" class="hero">
+        <h1 id="About-us" class="centered">Our Story</h1>
+        </div>
    <p>Hi, welcome to our site we go by the name 
-       of recipe hub. Our goal is to help you generator unquie 
+       of recipe hub. Our goal is to help you generator unique 
        recipes so you dont fall into a rutt like we did when we 
        were college students.
    </p>
+   <div class="explore">
    <button type="button"></a>Explore</button>
+   </div>
+   <div class ="rounded"></div>
    </div>
     <main>
         <!--Section for getting food & cocktail recipes-->
-        <section>
+        <section class="row">
             <!--Random Food Generator-->
-            <div>
-                <button type="submit">Generate Food Recipe</button>
-                <div>
+            
+            <div id="food" class="four columns">
+                <button type="submit" class=" button-primary">Generate Food Recipe</button>
                     <h2>Recipe Title</h2>
                     <h3>Recipe Ingredients</h3>
                     <ul>
@@ -52,19 +59,18 @@
                     </ul>
                     <h3>Recipe Directions</h3>
                     <p>Insert Directions</p>
-                </div>
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oTw5tPt4KmA" 
+            </div>
+                <div class="four columns">
+                    <iframe src="https://www.youtube.com/embed/oTw5tPt4KmA" 
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
                 </div>
-            </div>
             <!--Random Cocktail Generator-->
-            <div>
-                <button type="submit">Generate Cocktail</button>
+            <div id=cocktail class="four columns">
+                <button type="submit" class=" button-primary">Generate Cocktail</button>
                 <div>
                     <h2>Recipe Title</h2>
-                    <img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">
+                    <!--<img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">-->
                     <h3>Recipe Ingredients</h3>
                     <ul>
                         <li>Ingredient 1, units</li>
@@ -78,9 +84,52 @@
                     <p>Insert Directions</p>
                 </div>
             </div>
+            
         </section>
+        <div class ="rounded"></div>
+        <div class="row">
+            <div id="Favorite Recipe" class="six columns">
+                <h3>Favorite Recipe</h3>
+                <h4>Youtube Demo</h4>        
+            </div>
+        
+        
+            <div id="Favorite Cocktail" class="six columns">
+                <h3>Favorite Cocktail</h3>
+                <h4>Youtube Demo</h4>
+            </div>
+        </div>
+      
+        </main>
+    
+        <footer id="Closing" class ="rounded">
+            <div class="footer">
+                <div class="love">
+                    <h5>Made with ♥ by Recipe Hub</h5>
+                </div>
+
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <img src="./assets/images/facebook.png" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/">
+                                <img src="./assets/images/twitter.png" alt="Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <img src="./assets/images/instagram.png" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </main>
-    <footer></footer>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
-
