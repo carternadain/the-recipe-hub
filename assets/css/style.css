@@ -9,9 +9,9 @@
   }
 
 
-  h1{
-      width: 50%;
-      height: 50%;
+  .logo {
+      width: 200px;
+      height: 150px;
   }
 
 
@@ -41,7 +41,9 @@
 }
 
 .hero {
-    width: 100%;
+    width: 90%;
+    height: 50%;
+    border-radius: 20px;
 }
 
 .centered {
