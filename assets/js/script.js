@@ -3,7 +3,7 @@
 const foodSubmit = document.querySelector("#food-generate");
 const cocktailSubmit = document.querySelector("#cocktail-generate");
 
-var foodEl = document.querySelector("#food-element");
+const foodEl = document.querySelector("#food-element");
 
 
 // retrieve local storage
@@ -30,7 +30,7 @@ var fetchFoodFunction = function() {
     .then(response => response.json())
     .then(response => {
         getFoodRecipe(response.meals[0])
-    });
+    })
 };
 
 
@@ -42,8 +42,28 @@ var getCocktailRecipe = function() {
 // function to render the food recipe 
 
 function getFoodRecipe(meal) {
-    foodEl.innerHTML = 
-    '<h2>${meal.strMeal}</h2>'
+    titleFood = document.createElement('h2');
+    titleFood.textContent = meal.strMeal;
+    foodEl.appendChild(titleFood);
+
+    titleIngredients = document.createElement('h3');
+    titleIngredients.textContent = 'Recipe Ingredients';
+    foodEl.appendChild(titleIngredients);
+
+    // unorderedList = document.createElement('ul');
+    // unorderedList.appendChild(unorderedList);
+
+    // listEl = document.createElement('li');
+    // listEl.textContent = meal.strIngredient1;
+    // foodEl.appendChild(listEl);
+
+    titleDirections = document.createElement('h3');
+    titleDirections.textContent = 'Recipe Directions';
+    foodEl.appendChild(titleDirections);
+
+    instructionsEl = document.createElement('p');
+    instructionsEl.textContent = meal.strInstructions;
+    foodEl.appendChild(instructionsEl);
 
 };
 
