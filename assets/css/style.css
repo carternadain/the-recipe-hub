@@ -79,7 +79,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 20px;
+    margin: 5px 10px;
   }
 
   .social ul {
@@ -90,7 +90,8 @@
   }
 
   .social ul li {
-      padding: 5px;
+      padding: 10px;
+  
   }
 
   .social ul li a {
@@ -110,3 +111,29 @@
     border-radius: 5px;
  }
  
+ .box {
+     background-color: black;
+     width: auto;
+     border:15px solid black;
+     color: white;   
+ }
+
+
+
+ /* For tablets and smaller */
+@media screen and (max-width: 768px) {
+  iframe {
+      flex: wrap;
+      display: flex;
+  }
+        
+    }
+
+
+
+@media screen and (max-width: 550px) {
+    iframe {
+        flex: wrap;
+        display: flex;
+    }
+}
