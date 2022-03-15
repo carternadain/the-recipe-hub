@@ -48,28 +48,22 @@
             <!--Random Food Generator-->
             
             <div id="food" class="four columns">
-                <button type="submit" class=" button-primary">Generate Food Recipe</button>
-                    <h2>Recipe Title</h2>
-                    <h3>Recipe Ingredients</h3>
-                    <ul>
-                        <li>Ingredient 1, units</li>
-                        <li>Ingredient 2, units</li>
-                        <li>Ingredient 3, units</li>
-                        <li>Ingredient 4, units</li>
-                        <li>Ingredient 5, units</li>
-                        <li>Ingredient 6, units</li>
-                    </ul>
-                    <h3>Recipe Directions</h3>
-                    <p>Insert Directions</p>
+                <form id="food-generate">
+                    <button type="button" class=" button-primary">Generate Food Recipe</button>
+                </form>
+                <div id="food-element">
+                </div>
             </div>
-                <div class="four columns">
+                <div class="four columns" id="iframe">
                     <iframe src="https://www.youtube.com/embed/oTw5tPt4KmA" 
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
                 </div>
             <!--Random Cocktail Generator-->
-            <div id=cocktail class="four columns">
-                <button type="submit" class=" button-primary">Generate Cocktail</button>
+            <div id="cocktail" class="four columns">
+                <form id="cocktail-generate">
+                    <button type="button" class=" button-primary">Generate Cocktail</button>
+                </form>
                 <div>
                     <h2>Recipe Title</h2>
                     <!--<img src="https://www.thecocktaildb.com/images/media/drink/d7mo481504889531.jpg" alt="drink" width="360" height="315">-->
@@ -88,6 +82,7 @@
             </div>
             
         </section>
+      
         <div class ="rounded"></div>
         <div class="row">
             <div id="Favorite Recipe" class="six columns">
@@ -132,6 +127,7 @@
             </div>
         </footer>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
