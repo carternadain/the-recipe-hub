@@ -10,21 +10,36 @@ for (let i=1; i <= 20 ; i++) {
     measures.push ("strMeasure" +i)
     ingredients.push ("strIngredient" +i)
 }
-// console.log (measures)
-// console.log (ingredients)
 
+const cocktailEl = document.querySelector('#cocktail-element');
+var measuresCt = []
+var ingredientsCt = []
+for (let i=1; i <= 20 ; i++) {
+    measuresCt.push ("strMeasure" +i)
+    ingredientsCt.push ("strIngredient" +i)
+}
 
-// fection API
+// fetch API
 var fetchCocktailFunction = function() {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-    .then(function(drinks) {
-        return drinks.json();
-      })
-    .then(function(drinks) {
-    drinks.json().then(function(data) {
-        console.log(data);
-    });
-});
+    .then(response => response.json())
+    .then(response => {
+        const ingredientsArr  =[]
+        const measuresArr  = []
+       
+
+        for (let i=0; i <= 14 ; i++ ) { 
+
+            console.log (ingredientsCt[i])
+        if  (response.drinks[0][ingredientsCt[i]] !=="" && response.drinks[0][ingredientsCt[i]] !== null) { 
+           ingredientsArr.push (response.drinks[0][ingredientsCt[i]])
+        
+           measuresArr.push (response.drinks[0][measuresCt[i]])
+        }
+
+    } console.log(ingredientsArr);
+    getCocktailRecipe(response.drinks[0],ingredientsArr,measuresArr)
+    })
 };
 
 var fetchFoodFunction = function() {
@@ -37,24 +52,58 @@ var fetchFoodFunction = function() {
 
         for (let i=0; i <= 19 ; i++ ) { 
 
-            console.log (ingredients[i] )
-        if  (response.meals[0][ingredients[i]] !==""&&=response.meals[0][ingredients[i]] not.null) { 
+            console.log (ingredients[i])
+        if  (response.meals[0][ingredients[i]] !=="" && response.meals[0][ingredients[i]] !== null) { 
            ingredientsArr.push (response.meals[0][ingredients[i]])
         
            measuresArr.push (response.meals[0][measures[i]])
         }
 
-        // console.log(response.meals[0])
-        // console.log(response.meals[0].strIngredient1)
-        // console.log(response.meals[0].strMeasure1)
-    } console.log (ingredientsArr)
+    } console.log(ingredientsArr)
     getFoodRecipe(response.meals[0],ingredientsArr,measuresArr)
     })
 };
 
 
 // function to render cocktail recipe
-var getCocktailRecipe = function() {
+var getCocktailRecipe = function(drink, ingredients, measures) {
+    
+    // if (titleDrink != 'undefined' && element != null) { 
+    // cocktailEl.removeChild(titleDrink);
+    // cocktailEl.removeChild(titleIngredients);
+    // cocktailEl.removeChild(ingredientsDiv);
+    // } else {
+
+    titleDrink = document.createElement('h2');
+    titleDrink.textContent = drink.strDrink;
+    cocktailEl.appendChild(titleDrink);
+  
+
+    titleIngredients = document.createElement('h3');
+    titleIngredients.textContent = 'Recipe Ingredients:';
+    cocktailEl.appendChild(titleIngredients);
+
+    ingredientsDiv = document.createElement('div');
+    cocktailEl.appendChild(ingredientsDiv);
+   
+    unorderedList = document.createElement('ul');
+    ingredientsDiv.appendChild(unorderedList);
+
+    for (i= 0 ; i < ingredients.length; i++) {
+        const ing = document.createElement ('li');
+        // ing.textContent = ingredients[i]
+        ing.textContent = `${measures[i]} ${ingredients[i]}`
+        unorderedList.appendChild(ing);
+    }
+
+    titleDirections = document.createElement('h3');
+    titleDirections.textContent = 'Recipe Directions:';
+    cocktailEl.appendChild(titleDirections);
+
+    instructionsEl = document.createElement('p');
+    instructionsEl.textContent = drinks.strInstructions;
+    cocktailEl.appendChild(instructionsEl);
+// }
 
 };
 
@@ -68,11 +117,14 @@ function getFoodRecipe(meal,ingredients,measures) {
   
 
     titleIngredients = document.createElement('h3');
-    titleIngredients.textContent = 'Recipe Ingredients';
+    titleIngredients.textContent = 'Recipe Ingredients:';
     foodEl.appendChild(titleIngredients);
+
+    ingredientsDiv = document.createElement('div');
+    foodEl.appendChild(ingredientsDiv);
    
     unorderedList = document.createElement('ul');
-    titleIngredients.appendChild(unorderedList);
+    ingredientsDiv.appendChild(unorderedList);
     for (i= 0 ; i < ingredients.length; i++) {
         const ing = document.createElement ('li');
         // ing.textContent = ingredients[i]
@@ -80,12 +132,8 @@ function getFoodRecipe(meal,ingredients,measures) {
         unorderedList.appendChild(ing);
     }
 
-    // listEl = document.createElement('li');
-    // listEl.textContent = meal.strIngredient1;
-    // foodEl.appendChild(listEl);
-
     titleDirections = document.createElement('h3');
-    titleDirections.textContent = 'Recipe Directions';
+    titleDirections.textContent = 'Recipe Directions:';
     foodEl.appendChild(titleDirections);
 
     instructionsEl = document.createElement('p');
@@ -94,6 +142,7 @@ function getFoodRecipe(meal,ingredients,measures) {
 
 };
 
+
 // generate button click functionality
 foodSubmit.addEventListener("click", fetchFoodFunction);
-cocktailSubmit.addEventListener("click", getCocktailRecipe);
+cocktailSubmit.addEventListener("click", fetchCocktailFunction);
