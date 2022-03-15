@@ -33,8 +33,10 @@ var fetchCocktailFunction = function() {
             console.log (ingredientsCt[i])
         if  (response.drinks[0][ingredientsCt[i]] !=="" && response.drinks[0][ingredientsCt[i]] !== null) { 
            ingredientsArr.push (response.drinks[0][ingredientsCt[i]])
-        
-           measuresArr.push (response.drinks[0][measuresCt[i]])
+
+           if  (response.drinks[0][measuresCt[i]] !=="" && response.drinks[0][measuresCt[i]] !== null) {
+                measuresArr.push (response.drinks[0][measuresCt[i]])
+           }
         }
 
     } console.log(ingredientsArr);
@@ -55,8 +57,9 @@ var fetchFoodFunction = function() {
             console.log (ingredients[i])
         if  (response.meals[0][ingredients[i]] !=="" && response.meals[0][ingredients[i]] !== null) { 
            ingredientsArr.push (response.meals[0][ingredients[i]])
-        
-           measuresArr.push (response.meals[0][measures[i]])
+           if  (response.meals[0][measures[i]] !=="" && response.meals[0][measures[i]] !== null) {
+            measuresArr.push (response.meals[0][measures[i]])
+           }
         }
 
     } console.log(ingredientsArr)
@@ -67,12 +70,6 @@ var fetchFoodFunction = function() {
 
 // function to render cocktail recipe
 var getCocktailRecipe = function(drink, ingredients, measures) {
-    
-    // if (titleDrink != 'undefined' && element != null) { 
-    // cocktailEl.removeChild(titleDrink);
-    // cocktailEl.removeChild(titleIngredients);
-    // cocktailEl.removeChild(ingredientsDiv);
-    // } else {
 
     titleDrink = document.createElement('h2');
     titleDrink.textContent = drink.strDrink;
@@ -120,7 +117,7 @@ function getFoodRecipe(meal,ingredients,measures) {
     titleIngredients.textContent = 'Recipe Ingredients:';
     foodEl.appendChild(titleIngredients);
 
-    ingredientsDiv = document.createElement('div');
+    var ingredientsDiv = document.createElement('div');
     foodEl.appendChild(ingredientsDiv);
    
     unorderedList = document.createElement('ul');
