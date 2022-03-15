@@ -12,10 +12,6 @@ for (let i=1; i <= 20 ; i++) {
 }
 // console.log (measures)
 // console.log (ingredients)
-// retrieve local storage
-
-
-// function to execute when the generate button is clicked
 
 
 // fection API
@@ -64,6 +60,7 @@ var getCocktailRecipe = function() {
 
 // function to render the food recipe 
 
+
 function getFoodRecipe(meal,ingredients,measures) {
     titleFood = document.createElement('h2');
     titleFood.textContent = meal.strMeal;
@@ -96,8 +93,6 @@ function getFoodRecipe(meal,ingredients,measures) {
     foodEl.appendChild(instructionsEl);
 
 };
-
-// function to populate search history below search bar
 
 // generate button click functionality
 foodSubmit.addEventListener("click", fetchFoodFunction);
