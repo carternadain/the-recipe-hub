@@ -6,6 +6,11 @@
 
   main {
       margin: 10px;
+      text-align: center;
+  }
+
+  textarea {
+      width: 100%;
   }
 
 
@@ -44,6 +49,7 @@
     width: 90%;
     height: 50%;
     border-radius: 20px;
+    margin-bottom:20px;
 }
 
 .centered {
@@ -62,6 +68,20 @@
     text-align: center;
     color: black;
 
+  }
+
+  #ct-button,
+  #fd-button,
+  #sv-fd-button,
+  #sv-ct-button {
+      background-color:#5F8575;
+      border: none;
+  }
+
+  .save-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
   }
 
   .row p {
@@ -107,12 +127,13 @@
 
 
  .rounded {
-    border-top: 8px solid #bbb;
+    border-top: 3px solid #bbb;
     border-radius: 5px;
  }
  
  .box {
      background-color: black;
+     opacity: 85%;
      width: auto;
      border:15px solid black;
      color: white;   
