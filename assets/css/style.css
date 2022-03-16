@@ -9,6 +9,10 @@
       text-align: center;
   }
 
+  textarea {
+      width: 100%;
+  }
+
 
   .logo {
       width: 200px;
@@ -67,9 +71,17 @@
   }
 
   #ct-button,
-  #fd-button {
+  #fd-button,
+  #sv-fd-button,
+  #sv-ct-button {
       background-color:#5F8575;
       border: none;
+  }
+
+  .save-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
   }
 
   .row p {

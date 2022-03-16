@@ -49,20 +49,16 @@
         <section class="row">
             <!--Random Food Generator-->
             
-            <div id="food" class="four columns">
+            <div id="food" class="six columns">
                 <form id="food-generate">
                     <button type="button" class=" button-primary" id="fd-button">Generate Food Recipe</button>
                 </form>
                 <div id="food-element">
                 </div>
             </div>
-                <div class="four columns" id="iframe">
-                    <iframe src="https://www.youtube.com/embed/oTw5tPt4KmA" 
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-                </div>
+
             <!--Random Cocktail Generator-->
-            <div id="cocktail" class="four columns">
+            <div id="cocktail" class="six columns">
                 <form id="cocktail-generate">
                     <button type="button" class=" button-primary" id="ct-button">Generate Cocktail</button>
                 </form>
@@ -75,14 +71,20 @@
         <div class ="rounded"></div>
         <div class="row">
             <div id="Favorite Recipe" class="six columns">
-                <h3>Favorite Recipe</h3>
-                <h4>Youtube Demo</h4>        
+                <h3>Favorite Meal</h3>
+                <form class="save-form form-meal">
+                    <textarea placeholder="Insert your favorite recipe here!" id="food-text"></textarea>
+                    <button type="submit" class="button-primary" id="sv-fd-button">Save</button>    
+                </form> 
             </div>
         
         
             <div id="Favorite Cocktail" class="six columns">
                 <h3>Favorite Cocktail</h3>
-                <h4>Youtube Demo</h4>
+                <form class="save-form form-ct">
+                    <textarea placeholder="Insert your favorite recipe here!" id="cocktail-text"></textarea>
+                    <button type="submit" class="button-primary" id="sv-ct-button">Save</button>
+                </form>    
             </div>
         </div>
       

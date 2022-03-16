@@ -2,6 +2,8 @@
 
 const foodSubmit = document.querySelector("#food-generate");
 const cocktailSubmit = document.querySelector("#cocktail-generate");
+const favoriteFood = document.querySelector('#sv-fd-button');
+const favoriteCocktail = document.querySelector('#sv-ct-button');
 
 const foodEl = document.querySelector("#food-element");
 var measures = []
@@ -98,7 +100,7 @@ var getCocktailRecipe = function(drink, ingredients, measures) {
     cocktailEl.appendChild(titleDirections);
 
     instructionsEl = document.createElement('p');
-    instructionsEl.textContent = drinks.strInstructions;
+    instructionsEl.textContent = drink.strInstructions;
     cocktailEl.appendChild(instructionsEl);
 // }
 
@@ -139,7 +141,30 @@ function getFoodRecipe(meal,ingredients,measures) {
 
 };
 
+//save feature
+var saveFood = function(event) {
+    event.preventDefault();
+    console.log("saved food")
+
+    var food = $(this).siblings("#food-text").val();
+    localStorage.setItem('favRecipe', food);
+};
+
+$("form.form-meal textarea").val(localStorage.getItem("favRecipe"));
+
+var saveCocktail = function(event) {
+    event.preventDefault();
+    console.log("saved cocktail")
+
+    var cocktail = $(this).siblings("#cocktail-text").val();
+    localStorage.setItem('favCtRecipe', cocktail);
+};
+
+$("form.form-ct textarea").val(localStorage.getItem("favCtRecipe"));
 
 // generate button click functionality
 foodSubmit.addEventListener("click", fetchFoodFunction);
 cocktailSubmit.addEventListener("click", fetchCocktailFunction);
+favoriteFood.addEventListener("click", saveFood);
+favoriteCocktail.addEventListener("click", saveCocktail);
+
