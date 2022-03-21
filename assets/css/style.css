@@ -13,12 +13,14 @@
       width: 100%;
   }
 
+/* Custom Recipe Hub logo */
 
   .logo {
       width: 200px;
       height: 150px;
   }
 
+/* Navigation */
 
 .navbar {
     display:flex;
@@ -52,6 +54,7 @@
     margin-bottom:20px;
 }
 
+/* Main title over the picture */
 .centered {
     position: absolute;
     top: 50%;
@@ -70,6 +73,7 @@
 
   }
 
+  /* Layout for generating food and cocktails */
   #ct-button,
   #fd-button,
   #sv-fd-button,
@@ -102,6 +106,7 @@
     margin: 5px 10px;
   }
 
+  /* Footer layout with social media images */
   .social ul {
     text-decoration: none;
     display: flex;
