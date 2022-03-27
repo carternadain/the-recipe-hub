@@ -28,7 +28,12 @@ var fetchCocktailFunction = function() {
     .then(response => {
         const ingredientsArr  =[]
         const measuresArr  = []
-       
+
+        if (cocktailEl.h2 != 'undefined' && cocktailEl.h2 != null) {
+            
+        } else {
+            cocktailEl.innerHTML = "";
+        }
 
         for (let i=0; i <= 14 ; i++ ) { 
 
@@ -53,7 +58,12 @@ var fetchFoodFunction = function() {
         const ingredientsArr  =[]
         const measuresArr  = []
        
-
+        if (foodEl.h2 != 'undefined' && foodEl.h2 != null) {
+            
+        } else {
+            foodEl.innerHTML = "";
+        }
+        
         for (let i=0; i <= 19 ; i++ ) { 
 
             console.log (ingredients[i])
