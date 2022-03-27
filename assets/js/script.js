@@ -62,8 +62,8 @@ var fetchFoodFunction = function() {
             
         } else {
             foodEl.innerHTML = "";
-        }
-        
+        } 
+
         for (let i=0; i <= 19 ; i++ ) { 
 
             console.log (ingredients[i])
